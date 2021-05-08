@@ -1,0 +1,6 @@
+package com.zee.http;
+
+import android.support.v4.content.FileProvider;
+
+public class XProvider extends FileProvider {
+}
