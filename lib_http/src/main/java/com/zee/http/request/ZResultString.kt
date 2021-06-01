@@ -22,12 +22,11 @@ abstract class ZResultString : AbsStringResult() {
         } else GsonTools.getObject(json, T::class.java) as T
     }
 
-
-    inline fun <reified T : Any> getArrayListForKey(name: String): ArrayList<T>? {
+    inline fun <reified T : Any> getArrayListForKey(name: String): ArrayList<T> {
         return GsonTools.getObject(jsonObject.optString(name), T::class.java, true)
     }
 
-    inline fun <reified T : Any> getArrayListForValue(json: String): ArrayList<T>? {
+    inline fun <reified T : Any> getArrayListForValue(json: String): ArrayList<T> {
         return GsonTools.getObject(json, T::class.java, true)
     }
 

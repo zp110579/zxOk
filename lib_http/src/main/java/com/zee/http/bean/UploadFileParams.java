@@ -64,6 +64,28 @@ public class UploadFileParams extends OKHttpParams {
         return this;
     }
 
+    public UploadFileParams upLoadFile(String key, String pathname) {
+        File file = new File(pathname);
+        String fileName = file.getName();
+        FileNameMap fileNameMap = URLConnection.getFileNameMap();
+        String path = fileName.replace("#", "");
+        String contentType = fileNameMap.getContentTypeFor(path);
+        if (contentType == null) {
+            contentType = "application/octet-stream";
+        }
+        MediaType mediaType = MediaType.parse(contentType);
+
+        if (key != null) {
+            List<FileWrapper> fileWrappers = fileParamsMap.get(key);
+            if (fileWrappers == null) {
+                fileWrappers = new ArrayList<>();
+                fileParamsMap.put(key, fileWrappers);
+            }
+            fileWrappers.add(new FileWrapper(file, fileName, mediaType));
+        }
+        return this;
+    }
+
     public UploadFileParams upLoadFiles(String key, List<File> files) {
         if (key != null && files != null && !files.isEmpty()) {
             for (File file : files) {
