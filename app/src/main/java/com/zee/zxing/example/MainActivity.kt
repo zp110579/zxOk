@@ -3,17 +3,13 @@ package com.zee.zxing.example
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.lzy.imagepicker.ImagePicker
-import com.lzy.imagepicker.ImagePickerManager
-import com.lzy.imagepicker.bean.OnImagePickerListener
 import com.lzy.imagepicker.view.CropImageView
-import com.zee.http.MyOk
-import com.zee.http.bean.UploadFileParams
-import com.zee.http.request.UploadingFileCallBackListener
+import com.zee.http.socket.MyWebSocket
+import com.zee.http.socket.MyWebSocketListener
 import com.zee.log.ZLog
+import com.zee.utils.UIUtils
 import com.zee.utils.ZLibrary
-import com.zee.utils.ZScreenUtils
-import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
+import okhttp3.Response
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,15 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        tv_up_load_pic.setOnClickListener {
-            ImagePickerManager.with(this@MainActivity).singleSelectImage().letsGo { imageItemArrayList ->
-                if (imageItemArrayList.isNotEmpty()) {
-                    val uploadFileParams = UploadFileParams()
-                    uploadFileParams.upLoadFile("avatar", imageItemArrayList[0].path)
-                    ZLog.i(imageItemArrayList[0].path)
-                }
-            }
-        }
+
     }
 
     private fun initSelectPic() {
