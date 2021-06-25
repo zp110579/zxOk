@@ -20,7 +20,7 @@ import okio.ByteString;
     @Override
     public void onOpen(WebSocket webSocket, final Response response) {
         mMyWebSocket.mWebSocket = webSocket;
-        mMyWebSocket.setCurrentStatus(mMyWebSocket.CONNECTED);
+        mMyWebSocket.setStatus(mMyWebSocket.CONNECTED);
         mMyWebSocket.connected();
         if (mMyWebSocket.mMyWebSocketListener != null) {
             if (Looper.myLooper() != Looper.getMainLooper()) {

@@ -53,24 +53,25 @@ public class MyOkLogInterceptor implements Interceptor {
 
     private synchronized void printMessage(Request request, long tookMs, String requestBody, String responseBody, String requestStartMessage, Response clone) {
         final int fixLength = 3 * 1024;
-
-        log(" ");
-        log("------------ Http Begin --------------\n");
-        log("0. " + requestStartMessage + "\r\n");
-        log("1. headers = " + request.headers().toString());
-        log("2. requestBody = " + requestBody + "\r\n");
+        StringBuilder logSBuilder = new StringBuilder();
+        logSBuilder.append(" ");
+        logSBuilder.append("------------ Http Begin --------------\n");
+        logSBuilder.append("0. " + requestStartMessage + "\r\n");
+        logSBuilder.append("1. headers = " + request.headers().toString());
+        logSBuilder.append("2. requestBody = " + requestBody + "\r\n");
 
         for (int i = 0; i < responseBody.length(); i += fixLength) {
             if (i + fixLength < responseBody.length()) {
-                log("3. responseBody = " + responseBody.substring(i, i + fixLength));
+                logSBuilder.append("3. responseBody = " + responseBody.substring(i, i + fixLength));
             } else {
-                log("3. responseBody = " + responseBody.substring(i));
+                logSBuilder.append("3. responseBody = " + responseBody.substring(i));
             }
         }
-//        log("3. responseBody = " + responseBody);
-        log("4. " + clone.code() + ' ' + clone.message() + " (" + tookMs + "ms）");
-        log("------------ Http End --------------\n");
-        log(" ");
+//      log("3. responseBody = " + responseBody);
+        logSBuilder.append("4. " + clone.code() + ' ' + clone.message() + " (" + tookMs + "ms）");
+        logSBuilder.append("------------ Http End --------------\n");
+        logSBuilder.append(" ");
+        log(logSBuilder.toString());
     }
 
     private Response decrypt(Response response) throws IOException {

@@ -31,13 +31,15 @@ public class MyWebSocket {
     WebSocket mWebSocket;
     private OkHttpClient mOkHttpClient;
     private Request mRequest;
-    private int mCurrentStatus = DISCONNECTED;     //websocket连接状态
+    private int mStatus = DISCONNECTED;     //websocket连接状态
     private boolean isNeedReconnect;          //是否需要断线自动重连
     private boolean isManualClose = false;         //是否为手动关闭websocket连接
     MyWebSocketListener mMyWebSocketListener;
     private Lock mLock;
     Handler wsMainHandler = new Handler(Looper.getMainLooper());
     private int reconnectCount = 0;   //重连次数
+    private String heartText = "";//心跳包发送内容
+    private int heartInterval = 0;//心跳包发送间隔时间
     private Runnable reconnectRunnable = new Runnable() {
         @Override
         public void run() {
@@ -47,22 +49,29 @@ public class MyWebSocket {
             buildConnect();
         }
     };
+
+    Runnable heartRun = new Runnable() {
+        public void run() {
+            sendMessage(heartText);
+            wsMainHandler.postDelayed(this, 45000);
+        }
+    };
+
     private WebSocketListener mWebSocketListener = new OKWebSocketListener(this);
 
     private MyWebSocket(Builder builder) {
         wsUrl = builder.wsUrl;
+        heartInterval=builder.heartTime;
+        heartText=builder.heartText;
         isNeedReconnect = builder.needReconnect;
-        mOkHttpClient = new OkHttpClient().newBuilder()
-                .pingInterval(builder.interval, TimeUnit.SECONDS)
+        mOkHttpClient = new OkHttpClient().newBuilder().pingInterval(builder.interval, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true).build();
         this.mLock = new ReentrantLock();
     }
 
     private void initWebSocket() {
         if (mOkHttpClient == null) {
-            mOkHttpClient = new OkHttpClient.Builder()
-                    .retryOnConnectionFailure(true)
-                    .build();
+            mOkHttpClient = new OkHttpClient.Builder().retryOnConnectionFailure(true).build();
         }
         if (mRequest == null) {
             mRequest = new Request.Builder().url(wsUrl).build();
@@ -87,25 +96,31 @@ public class MyWebSocket {
         this.mMyWebSocketListener = myWebSocketListener;
     }
 
-    public synchronized boolean isWsConnected() {
-        return mCurrentStatus == CONNECTED;
+    public synchronized boolean isConnected() {
+        return mStatus == CONNECTED;
     }
 
-    public synchronized int getCurrentStatus() {
-        return mCurrentStatus;
+    public synchronized int getStatus() {
+        return mStatus;
     }
 
-    public synchronized void setCurrentStatus(int currentStatus) {
-        this.mCurrentStatus = currentStatus;
+    public synchronized void setStatus(int status) {
+        this.mStatus = status;
     }
 
     public void startConnect() {
         isManualClose = false;
         buildConnect();
+        if (heartInterval > 0) {
+            wsMainHandler.post(heartRun);
+        }
     }
 
     public void stopConnect() {
         isManualClose = true;
+        if (heartInterval > 0) {
+            wsMainHandler.removeCallbacks(heartRun);
+        }
         disconnect();
     }
 
@@ -114,7 +129,7 @@ public class MyWebSocket {
             return;
         }
 
-        setCurrentStatus(RECONNECT);
+        setStatus(RECONNECT);
 
         long delay = reconnectCount * RECONNECT_INTERVAL;
         wsMainHandler.postDelayed(reconnectRunnable, delay > RECONNECT_MAX_TIME ? RECONNECT_MAX_TIME : delay);
@@ -131,7 +146,7 @@ public class MyWebSocket {
     }
 
     private void disconnect() {
-        if (mCurrentStatus == DISCONNECTED) {
+        if (mStatus == DISCONNECTED) {
             return;
         }
         cancelReconnect();
@@ -147,16 +162,16 @@ public class MyWebSocket {
                 }
             }
         }
-        setCurrentStatus(DISCONNECTED);
+        setStatus(DISCONNECTED);
     }
 
     private synchronized void buildConnect() {
-        switch (getCurrentStatus()) {
+        switch (getStatus()) {
             case CONNECTED:
             case CONNECTING:
                 break;
             default:
-                setCurrentStatus(CONNECTING);
+                setStatus(CONNECTING);
                 initWebSocket();
         }
     }
@@ -172,7 +187,7 @@ public class MyWebSocket {
 
     private boolean send(Object msg) {
         boolean isSend = false;
-        if (mWebSocket != null && mCurrentStatus == CONNECTED) {
+        if (mWebSocket != null && mStatus == CONNECTED) {
             if (msg instanceof String) {
                 isSend = mWebSocket.send((String) msg);
             } else if (msg instanceof ByteString) {
@@ -191,6 +206,8 @@ public class MyWebSocket {
         private String wsUrl;
         private boolean needReconnect = true;
         private int interval = 15;
+        private int heartTime = 0;
+        private String heartText = "";
 
         public Builder(String val) {
             wsUrl = val;
@@ -198,6 +215,11 @@ public class MyWebSocket {
 
         public void setInterval(int interval) {
             this.interval = interval;
+        }
+
+        public void setHeartPackage(int time, String sendValue) {
+            this.heartTime = time;
+            this.heartText = sendValue;
         }
 
         public Builder needReconnect(boolean val) {
