@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        WebSocketTest()
+//        WebSocketTest()
     }
 
     private fun initSelectPic() {
