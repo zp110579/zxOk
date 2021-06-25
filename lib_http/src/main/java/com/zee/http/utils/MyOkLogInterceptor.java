@@ -54,8 +54,8 @@ public class MyOkLogInterceptor implements Interceptor {
     private synchronized void printMessage(Request request, long tookMs, String requestBody, String responseBody, String requestStartMessage, Response clone) {
         final int fixLength = 3 * 1024;
         StringBuilder logSBuilder = new StringBuilder();
-        logSBuilder.append(" ");
-        logSBuilder.append("------------ Http Begin --------------\n");
+        logSBuilder.append("\r\n");
+        logSBuilder.append("------------ Http Begin --------------\r\n");
         logSBuilder.append("0. " + requestStartMessage + "\r\n");
         logSBuilder.append("1. headers = " + request.headers().toString());
         logSBuilder.append("2. requestBody = " + requestBody + "\r\n");
@@ -67,10 +67,11 @@ public class MyOkLogInterceptor implements Interceptor {
                 logSBuilder.append("3. responseBody = " + responseBody.substring(i));
             }
         }
-//      log("3. responseBody = " + responseBody);
+        logSBuilder.append("\r\n");
         logSBuilder.append("4. " + clone.code() + ' ' + clone.message() + " (" + tookMs + "ms）");
-        logSBuilder.append("------------ Http End --------------\n");
-        logSBuilder.append(" ");
+        logSBuilder.append("\r\n");
+        logSBuilder.append("------------ Http End --------------\r\n");
+        logSBuilder.append("\r\n");
         log(logSBuilder.toString());
     }
 

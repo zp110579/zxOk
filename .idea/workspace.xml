@@ -29,13 +29,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1266e830-419d-4b7c-948b-430c2c4ccb53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/zee/zxing/example/WebSocketTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zee/zxing/example/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zee/zxing/example/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/socket/MyWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/socket/MyWebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/socket/OKWebSocketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/socket/OKWebSocketListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/utils/MyOkLogInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/utils/MyOkLogInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,26 +244,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620445126326" />
-    <state width="1860" height="336" key="GridCell.Tab.0.bottom" timestamp="1624436605250">
+    <state width="1860" height="336" key="GridCell.Tab.0.bottom" timestamp="1624607125742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="398" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620444573716" />
-    <state width="1860" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624436605250" />
-    <state width="1860" height="336" key="GridCell.Tab.0.center" timestamp="1624436605250">
+    <state width="1860" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607125742" />
+    <state width="1860" height="336" key="GridCell.Tab.0.center" timestamp="1624607125741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="398" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620444573716" />
-    <state width="1860" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624436605250" />
-    <state width="1860" height="336" key="GridCell.Tab.0.left" timestamp="1624436605250">
+    <state width="1860" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607125741" />
+    <state width="1860" height="336" key="GridCell.Tab.0.left" timestamp="1624607125741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="398" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620444573715" />
-    <state width="1860" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624436605250" />
-    <state width="1860" height="336" key="GridCell.Tab.0.right" timestamp="1624436605250">
+    <state width="1860" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607125741" />
+    <state width="1860" height="336" key="GridCell.Tab.0.right" timestamp="1624607125742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="398" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620444573716" />
-    <state width="1860" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624436605250" />
+    <state width="1860" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607125742" />
     <state width="1860" height="333" key="GridCell.Tab.1.bottom" timestamp="1623897397849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -302,20 +296,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="107" width="1720" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623321982588" />
-    <state x="496" y="154" width="1257" height="800" key="find.popup" timestamp="1624436602126">
+    <state x="496" y="154" width="1257" height="800" key="find.popup" timestamp="1624607425680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="662" y="252" width="596" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620439012556" />
-    <state x="496" y="154" width="1257" height="800" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624436602126" />
+    <state x="496" y="154" width="1257" height="800" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607425680" />
     <state x="671" y="162" key="psd.add.module.dependency.panel.dimension" timestamp="1622529107714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="671" y="162" key="psd.add.module.dependency.panel.dimension/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622529107714" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1624605014315">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1624607444446">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620352182383" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624605014315" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624607444446" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -329,11 +323,6 @@
           <url>file://$PROJECT_DIR$/lib_http/src/main/java/com/zee/http/request/ICallBackResult.java</url>
           <line>33</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/zee/zxing/example/WebSocketTest.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
