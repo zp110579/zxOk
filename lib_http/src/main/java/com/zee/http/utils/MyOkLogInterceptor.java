@@ -53,7 +53,7 @@ public class MyOkLogInterceptor implements Interceptor {
 
     private synchronized void printMessage(Request request, long tookMs, String requestBody, String responseBody, String requestStartMessage, Response clone) {
         final int fixLength = 3 * 1024;
-        StringBuilder logSBuilder = new StringBuilder();
+        StringBuilder logSBuilder = new StringBuilder("-Http(Message)-");
         logSBuilder.append("\r\n");
         logSBuilder.append("------------ Http Begin --------------\r\n");
         logSBuilder.append("0. " + requestStartMessage + "\r\n");

@@ -61,8 +61,8 @@ public class MyWebSocket {
 
     private MyWebSocket(Builder builder) {
         wsUrl = builder.wsUrl;
-        heartInterval=builder.heartTime;
-        heartText=builder.heartText;
+        heartInterval = builder.heartTime;
+        heartText = builder.heartText;
         isNeedReconnect = builder.needReconnect;
         mOkHttpClient = new OkHttpClient().newBuilder().pingInterval(builder.interval, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true).build();
@@ -217,9 +217,10 @@ public class MyWebSocket {
             this.interval = interval;
         }
 
-        public void setHeartPackage(int time, String sendValue) {
-            this.heartTime = time;
-            this.heartText = sendValue;
+        public Builder setHeartPackage(int heartTime, String heartText) {
+            this.heartTime = heartTime;
+            this.heartText = heartText;
+            return this;
         }
 
         public Builder needReconnect(boolean val) {
