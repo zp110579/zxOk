@@ -53,7 +53,7 @@ public class MyWebSocket {
     Runnable heartRun = new Runnable() {
         public void run() {
             sendMessage(heartText);
-            wsMainHandler.postDelayed(this, 45000);
+            wsMainHandler.postDelayed(this, heartInterval);
         }
     };
 
@@ -112,6 +112,7 @@ public class MyWebSocket {
         isManualClose = false;
         buildConnect();
         if (heartInterval > 0) {
+            wsMainHandler.removeCallbacks(heartRun);
             wsMainHandler.post(heartRun);
         }
     }
