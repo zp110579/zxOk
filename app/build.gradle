@@ -26,12 +26,11 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.zp110579:zlibrary:2.0.3'
+    implementation 'com.github.zp110579:zlibrary:2.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.zee:imagePicker:0.0.5'
     implementation project(path: ':lib_http')
     api 'com.github.bumptech.glide:glide:4.8.0'
-
 }
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }

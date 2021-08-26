@@ -46,9 +46,9 @@ public abstract class DownloadFileCallBackListener implements NetWorkListener {
     /**
      * 下载文件成功
      *
-     * @param File 下载成功后的文件
+     * @param file 下载成功后的文件
      */
-    public abstract void onDownloadSuccess(File File);
+    public abstract void onDownloadSuccess(File file);
 
 
     /**

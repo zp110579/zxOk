@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
+<paths>
     <external-path
-        name="beta_external_path"
-        path="Download/" />
-    <external-path
-        name="beta_external_files_path"
-        path="Android/data/" />
+        name="acuteagStore"
+        path="AcuteagStore/download" />
+
+    <external-cache-path
+        name="acuteagStore_cache"
+        path="." />
+
+    <external-files-path
+        name="acuteagStore_files"
+        path="." />
 
     <root-path
         name="ext_sd_files"
@@ -22,4 +27,5 @@
     <external-files-path
         name="ext_int_files"
         path="" />
+
 </paths>

@@ -1,13 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.zee:imagePicker:0.0.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30c96df0aeb8f8ec442ad810d36237f5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30c96df0aeb8f8ec442ad810d36237f5/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30c96df0aeb8f8ec442ad810d36237f5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e9deec43c4088a801eb3db1627d3f2d1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e9deec43c4088a801eb3db1627d3f2d1/res" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zee/imagePicker/0.0.5/1fc6f93200a9bf36f36a9ac5e298adf200743163/imagePicker-0.0.5-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zee/imagePicker/0.0.5/35fb9bbd134fefaf3f2371e8799ea0951aa9cff/imagePicker-0.0.5-sources.jar!/" />
     </SOURCES>

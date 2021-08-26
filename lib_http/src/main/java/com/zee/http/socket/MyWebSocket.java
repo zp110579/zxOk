@@ -113,7 +113,12 @@ public class MyWebSocket {
         buildConnect();
         if (heartInterval > 0) {
             wsMainHandler.removeCallbacks(heartRun);
-            wsMainHandler.post(heartRun);
+            wsMainHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {//延迟0.5秒发送心跳
+                    wsMainHandler.post(heartRun);
+                }
+            }, 500);
         }
     }
 

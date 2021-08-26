@@ -32,7 +32,6 @@ public abstract class DownAPKAndInstallCallBackListener extends DownloadFileCall
         Log.i("DownAPK", "安装成功");
     }
 
-    protected abstract String BuildConfigApplicationID();
 
     @Override
     public void onError(Exception e) {
@@ -68,5 +67,6 @@ public abstract class DownAPKAndInstallCallBackListener extends DownloadFileCall
                 context.startActivity(intent);
             }
         });
+
     }
 }
