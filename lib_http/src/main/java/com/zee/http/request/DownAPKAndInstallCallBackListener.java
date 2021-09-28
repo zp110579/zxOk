@@ -17,6 +17,7 @@ import java.io.File;
  */
 public abstract class DownAPKAndInstallCallBackListener extends DownloadFileCallBackListener {
 
+
     /**
      * 下载文件成功
      */

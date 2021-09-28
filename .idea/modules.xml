@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="zxOk/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_http/lib_http.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_http/lib_http.iml" group="zxOk/lib_http" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zxOk.iml" filepath="$PROJECT_DIR$/.idea/modules/zxOk.iml" group="zxOk" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zxOk.iml" filepath="$PROJECT_DIR$/.idea/modules/zxOk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/zxOk.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/zxOk.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_http/zxOk.lib_http.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_http/zxOk.lib_http.iml" />
     </modules>
   </component>
 </project>

@@ -20,7 +20,6 @@ public abstract class ICallBackResult {
      */
     @UiThread
     public void onStart() {
-
     }
 
     /**
